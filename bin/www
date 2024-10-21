@@ -39,6 +39,12 @@ server.on("error", onError);
 server.on("listening", onListening);
 
 /**
+ * WebSocket (Socket.io) handling
+ */
+
+connectSocket(io);
+
+/**
  * Normalize a port into a number, string, or false.
  */
 
