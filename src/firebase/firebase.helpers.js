@@ -4,8 +4,9 @@ require("dotenv").config();
 
 async function sendNotification(req, res) {
   // / This registration token comes from the client FCM SDKs.
-  const registrationToken =
-    "fRX2AfY2RPiUq-oEfHg34p:APA91bGXqvqHpgB7Dm9-6s-jFWabIR9vTyFCHNFLXzrcEcIe5y_SgOJscxBieI0MiClIjg11Asdp9M3_r_1_lLQzapBwCbK8VeCwSPEdBAoa6AzIqQh-KiWu1sFkfnckJ9VTE0a7wGfz";
+  // const registrationToken =
+  //   "fRX2AfY2RPiUq-oEfHg34p:APA91bGXqvqHpgB7Dm9-6s-jFWabIR9vTyFCHNFLXzrcEcIe5y_SgOJscxBieI0MiClIjg11Asdp9M3_r_1_lLQzapBwCbK8VeCwSPEdBAoa6AzIqQh-KiWu1sFkfnckJ9VTE0a7wGfz";
+  const registrationToken = req.body.token;
 
   const message = {
     data: {
