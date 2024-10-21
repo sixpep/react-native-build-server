@@ -10,7 +10,7 @@ var data = [];
 setInterval(() => {
   const randomNumber = Math.floor(Math.random() * 100); // Generate a random number
   data.push(randomNumber); // Push it to the data array
-  // console.log("New random number added:", randomNumber);
+  console.log("New random number added:", randomNumber);
 
   // Emit the updated data to all connected clients
   io.emit("message", data);
@@ -26,6 +26,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, "0.0.0.0", () => {
-  console.log("Socket.IO server running on port 3001");
-});
+server.listen(3001);
