@@ -7,6 +7,8 @@
 var app = require("../app");
 var debug = require("debug")("react-native-build-server:server");
 var http = require("http");
+var socketIO = require("socket.io");
+var { connectSocket } = require("../src/websocket/socket");
 
 /**
  * Get port from environment and store in Express.
@@ -20,6 +22,11 @@ app.set("port", port);
  */
 
 var server = http.createServer(app);
+
+/**
+ * Initialize Socket.io on the same server
+ */
+var io = socketIO(server); // Attach Socket.io to the same HTTP server
 
 /**
  * Listen on provided port, on all network interfaces.
